@@ -15,11 +15,11 @@ def menu():
         choice = input("Choose an option: ")
 
         if choice == "1":
-            length = int(input("Enter Password Length: "))
+            length = int(input("\nEnter Password Length: "))
             print("Generate Password: ", generate_password(length))
 
         elif choice == "2":
-            website = input("Enter website/app name: ").lower()
+            website = input("\nEnter website/app name: ").lower()
             username = input("Enter username/email: ").lower()
             password = input("Enter password (leave blank to auto-generate): ")
 
@@ -29,7 +29,7 @@ def menu():
             print("Credentials saved successfully!")
         
         elif choice == "3":
-            website = input("Enter website/app name: ")
+            website = input("\nEnter website/app name: ")
             credentials = storage.get_credentials(website)
             if credentials:
                 print(f"Username: {credentials['username']}\nPassword: {credentials['password']}")
@@ -37,18 +37,18 @@ def menu():
                 print("No credentials found.")
         
         elif choice == "4":
-            website = input("Enter website/app name: ")
+            website = input("\nEnter website/app name: ")
             if storage.delete_credentials(website):
                 print("Credentials deleted successfully.")
             else:
                 print("No credentials found.")
         
         elif choice == "5":
-            print("Exiting... Goodbye")
+            print("\nExiting... Goodbye")
             break
         
         else:
-            print("Invalid choice, try again!")
+            print("\nInvalid choice, try again!")
     
 if __name__ == "__main__":
     menu()
